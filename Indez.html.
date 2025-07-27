@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reformas Modernas | Calidad y Confianza</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #005f73;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #94d2bd;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #005f73;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #94d2bd;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      flex: 1 1 280px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: #0a9396;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      height: 180px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .reviews {
+      background: #e0f2f1;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+    }
+
+    .review {
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #004d40;
+    }
+
+    .review strong {
+      font-style: normal;
+      color: #00796b;
+    }
+
+    .contact {
+      background: #0a9396;
+      color: white;
+      padding: 30px 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto 60px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-align: center;
+      position: relative;
+    }
+
+    .contact h2 {
+      color: white;
+      border-color: white;
+    }
+
+    .contact p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+    }
+
+    .btn-contact {
+      display: inline-block;
+      background: #94d2bd;
+      color: #005f73;
+      padding: 12px 30px;
+      font-weight: 700;
+      border-radius: 25px;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      background: #ee9b00;
+      color: white;
+    }
+
+    /* Botón WhatsApp */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-button:hover {
+      background-color: #1ebe57;
+    }
+    .whatsapp-button svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    footer {
+      background: #001219;
+      color: #94d2bd;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .services {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Reformas Modernas</h1>
+  <nav>
+    <a href="#services">Servicios</a>
+    <a href="#gallery">Galería</a>
+    <a href="#reviews">Reseñas</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+</header>
+
+<div class="hero">
+  Transformamos tu hogar con calidad y confianza
+</div>
+
+<main>
+  <section id="services">
+    <h2>Servicios</h2>
+    <div class="services">
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/0a9396/kitchen.png" alt="Reformas de Cocina" />
+        <h3>Reformas de Cocina</h3>
+        <p>Diseños modernos y funcionales para renovar tu cocina.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/0a9396/bathtub.png" alt="Renovación de Baños" />
+        <h3>Renovación de Baños</h3>
+        <p>Espacios confortables y elegantes para tu baño.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/0a9396/paint-roller.png" alt="Pintura y Acabados" />
+        <h3>Pintura y Acabados</h3>
+        <p>Acabados profesionales para darle vida a tus paredes.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/0a9396/hammer.png" alt="Reparaciones" />
+        <h3>Reparaciones</h3>
+        <p>Mantenimiento y reparaciones rápidas y confiables.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Galería de Proyectos</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1560184897-c98d5de928be?auto=format&fit=crop&w=600&q=80" alt="Antes - Cocina" />
+      <img src="https://images.unsplash.com/photo-1600585154152-5d5b13f8b08f?auto=format&fit=crop&w=600&q=80" alt="Después - Cocina" />
+      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Antes - Baño" />
+      <img src="https://images.unsplash.com/photo-1618212467450-41107fdf7a0b?auto=format&fit=crop&w=600&q=80" alt="Después - Baño" />
+      <!-- Fotos adicionales -->
+      <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Sala reformada" />
+      <img src="https://images.unsplash.com/photo-1580582935963-6a95e2c0f0d8?auto=format&fit=crop&w=600&q=80" alt="Pared pintada" />
+      <img src="https://images.unsplash.com/photo-1523206489230-c0127e8e8a25?auto=format&fit=crop&w=600&q=80" alt="Renovación interior" />
+      <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" alt="Proyecto acabado" />
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <h2>Reseñas de Clientes</h2>
+    <div class="review">
+      <p>"¡Quedamos encantados con la reforma de nuestra cocina! Profesionales, rápidos y muy limpios. Totalmente recomendados." <br><strong>- Ana G.</strong></p>
+    </div>
+    <div class="review">
+      <p>"Excelente trabajo en la renovación del baño. Nos asesoraron en todo momento y el resultado superó nuestras expectativas." <br><strong>- Carlos M.</strong></p>
+    </div>
+    <div class="review">
+      <p>"La pintura quedó impecable, además cumplieron con los tiempos pactados y el trato fue muy amable." <br><strong>- Laura F.</strong></p>
+    </div>
+    <div class="review">
+      <p>"Repararon varios desperfectos en casa con gran profesionalidad y rapidez. Sin duda, volveremos a contar con ellos." <br><strong>- Javier T.</strong></p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contacto</h2>
+    <p>📞 Teléfono: <a href="tel:+34684327148" style="color: #94d2bd; text-decoration: none;">684 327 148</a></p>
+    <p>📧 Email: <a href="mailto:contacto@reformasmodernas.com" style="color: #94d2bd; text-decoration: none;">contacto@reformasmodernas.com</a></p>
+    <a href="mailto:contacto@reformasmodernas.com" class="btn-contact">Solicita tu presupuesto</a>
+  </section>
+</main>
+
+<!-- Botón WhatsApp -->
+<a 
+  href="https://wa.me/34684327148" 
+  target="_blank" 
+  rel="noopener" 
+  class="whatsapp-button" 
+  aria-label="Chat en WhatsApp">
+  <!-- Icono oficial WhatsApp SVG -->
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.52 3.48A11.91 11.91 0 0012 0C5.37 0 0 5.37 0 12a11.89 11.89 0 001.61 6.03L0 24l6-1.57a11.91 11.91 0 006 1.57c6.63 0 12-5.37 12-12a11.91 11.91 0 00-1.48-6.42zm-8.41 16.65a9.87 9.87 0 01-5.15-1.48l-.37-.23-3.17.83.85-3.1-.25-.38a9.9 9.9 0 01-1.5-5.19c0-5.47 4.45-9.91 9.92-9.91 2.65 0 5.14 1.03 7 2.9a9.88 9.88 0 012.92 7c0 5.48-4.44 9.92-9.91 9.92zm5.41-7.22c-.29-.14-1.72-.85-1.99-.95-.27-.1-.47-.14-.67.14s-.77.95-.95 1.14c-.17.19-.35.21-.64.07-.29-.14-1.23-.46-2.35-1.44-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.45.12-.6.12-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.19.05-.35-.02-.49-.07-.14-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17 0-.36-.01-.55-.01s-.51.07-.78.37a2.92 2.92 0 00-1 2.24c0 1.31.88 2.58 1 2.76.13.18 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.62.69.23 1.32.2 1.82.12.56-.1 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.13-.27-.19-.56-.33z"/>
+  </svg>
+</a>
+
+<footer>
+  &copy; 2025 Reformas Modernas. Todos los derechos reservados.
+</footer>
+
+</body>
+</html>
